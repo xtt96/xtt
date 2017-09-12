@@ -1,0 +1,6 @@
+com\usian\taotao\service\goods\pojo\ItemParamItem.class
+com\usian\taotao\service\goods\pojo\ItemCat.class
+com\usian\taotao\service\goods\api\ItemService.class
+com\usian\taotao\service\goods\pojo\Item.class
+com\usian\taotao\service\goods\pojo\ItemParam.class
+com\usian\taotao\service\goods\pojo\ItemDesc.class

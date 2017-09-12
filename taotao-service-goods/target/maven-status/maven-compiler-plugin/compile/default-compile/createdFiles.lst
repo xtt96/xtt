@@ -1,0 +1,7 @@
+com\usian\taotao\service\goods\api\impl\ItemServiceImpl.class
+com\usian\taotao\service\goods\GoodsServiceProvider.class
+com\usian\taotao\service\goods\mapper\ItemParamItemMapper.class
+com\usian\taotao\service\goods\mapper\ItemMapper.class
+com\usian\taotao\service\goods\mapper\ItemParamMapper.class
+com\usian\taotao\service\goods\mapper\ItemCatMapper.class
+com\usian\taotao\service\goods\mapper\ItemDescMapper.class

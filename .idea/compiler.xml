@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="commons-config" />
+        <module name="commons-core" />
+        <module name="commons-web" />
+        <module name="taotao-api-goods" />
+        <module name="taotao-api-user" />
+        <module name="taotao-service-goods" />
+        <module name="taotao-service-user" />
+        <module name="taotao-web-manager" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="commons-config" target="1.8" />
+      <module name="commons-core" target="1.8" />
+      <module name="commons-web" target="1.8" />
+      <module name="taotao" target="1.8" />
+      <module name="taotao-api-goods" target="1.8" />
+      <module name="taotao-api-user" target="1.8" />
+      <module name="taotao-commons-config" target="1.5" />
+      <module name="taotao-service-goods" target="1.8" />
+      <module name="taotao-service-user" target="1.8" />
+      <module name="taotao-web-manager" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+</project>

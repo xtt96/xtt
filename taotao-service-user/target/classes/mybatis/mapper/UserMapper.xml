@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.usian.taotao.service.user.mapper.UserMapper">
+  <resultMap id="BaseResultMap" type="com.usian.taotao.service.user.pojo.User">
+    <id column="id" jdbcType="VARCHAR" property="id" />
+    <result column="usercode" jdbcType="VARCHAR" property="usercode" />
+    <result column="username" jdbcType="VARCHAR" property="username" />
+    <result column="password" jdbcType="VARCHAR" property="password" />
+    <result column="salt" jdbcType="VARCHAR" property="salt" />
+    <result column="locked" jdbcType="CHAR" property="locked" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, usercode, username, password, salt, locked
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from sys_user
+    where id = #{id,jdbcType=VARCHAR}
+  </select>
+
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from sys_user
+    where id = #{id,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.usian.taotao.service.user.pojo.User">
+    insert into sys_user (id, usercode, username, 
+      password, salt, locked
+      )
+    values (#{id,jdbcType=VARCHAR}, #{usercode,jdbcType=VARCHAR}, #{username,jdbcType=VARCHAR}, 
+      #{password,jdbcType=VARCHAR}, #{salt,jdbcType=VARCHAR}, #{locked,jdbcType=CHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.usian.taotao.service.user.pojo.User">
+    insert into sys_user
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="usercode != null">
+        usercode,
+      </if>
+      <if test="username != null">
+        username,
+      </if>
+      <if test="password != null">
+        password,
+      </if>
+      <if test="salt != null">
+        salt,
+      </if>
+      <if test="locked != null">
+        locked,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=VARCHAR},
+      </if>
+      <if test="usercode != null">
+        #{usercode,jdbcType=VARCHAR},
+      </if>
+      <if test="username != null">
+        #{username,jdbcType=VARCHAR},
+      </if>
+      <if test="password != null">
+        #{password,jdbcType=VARCHAR},
+      </if>
+      <if test="salt != null">
+        #{salt,jdbcType=VARCHAR},
+      </if>
+      <if test="locked != null">
+        #{locked,jdbcType=CHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.usian.taotao.service.user.pojo.User">
+    update sys_user
+    <set>
+      <if test="usercode != null">
+        usercode = #{usercode,jdbcType=VARCHAR},
+      </if>
+      <if test="username != null">
+        username = #{username,jdbcType=VARCHAR},
+      </if>
+      <if test="password != null">
+        password = #{password,jdbcType=VARCHAR},
+      </if>
+      <if test="salt != null">
+        salt = #{salt,jdbcType=VARCHAR},
+      </if>
+      <if test="locked != null">
+        locked = #{locked,jdbcType=CHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.usian.taotao.service.user.pojo.User">
+    update sys_user
+    set usercode = #{usercode,jdbcType=VARCHAR},
+      username = #{username,jdbcType=VARCHAR},
+      password = #{password,jdbcType=VARCHAR},
+      salt = #{salt,jdbcType=VARCHAR},
+      locked = #{locked,jdbcType=CHAR}
+    where id = #{id,jdbcType=VARCHAR}
+  </update>
+
+
+  <select id="selectByUsercode" resultType="com.usian.taotao.service.user.pojo.User" parameterType="string">
+    select
+    <include refid="Base_Column_List" />
+    from sys_user
+    where usercode = #{usercode,jdbcType=VARCHAR}
+  </select>
+
+  <select id="findUrlPermissionByUserId" resultType="com.usian.taotao.service.user.pojo.Permission" parameterType="string">
+     SELECT
+			*
+		FROM
+			sys_permission
+		WHERE
+			type = 'permission'
+		AND id IN (
+			SELECT
+				sys_permission_id
+			FROM
+				sys_role_permission
+			WHERE
+				sys_role_id IN (
+					SELECT
+						sys_role_id
+					FROM
+						sys_user_role
+					WHERE
+						sys_user_id = #{userId}
+				)
+		)
+
+  </select>
+  <select id="findMenuPermissionByUserId" resultType="com.usian.taotao.service.user.pojo.Permission" parameterType="string">
+    SELECT
+			*
+		FROM
+			sys_permission
+		WHERE
+			type = 'menu'
+		AND id IN (
+			SELECT
+				sys_permission_id
+			FROM
+				sys_role_permission
+			WHERE
+				sys_role_id IN (
+					SELECT
+						sys_role_id
+					FROM
+						sys_user_role
+					WHERE
+						sys_user_id = #{userId}
+				)
+		)
+
+
+  </select>
+
+
+</mapper>

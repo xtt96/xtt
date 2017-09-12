@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/taotao-commons-config/commons-config.iml" filepath="$PROJECT_DIR$/taotao-commons-config/commons-config.iml" />
+      <module fileurl="file://$PROJECT_DIR$/taotao-commons-core/commons-core.iml" filepath="$PROJECT_DIR$/taotao-commons-core/commons-core.iml" />
+      <module fileurl="file://$PROJECT_DIR$/taotao-commons-web/commons-web.iml" filepath="$PROJECT_DIR$/taotao-commons-web/commons-web.iml" />
+      <module fileurl="file://$PROJECT_DIR$/taotao.iml" filepath="$PROJECT_DIR$/taotao.iml" />
+      <module fileurl="file://$PROJECT_DIR$/taotao-api-goods/taotao-api-goods.iml" filepath="$PROJECT_DIR$/taotao-api-goods/taotao-api-goods.iml" />
+      <module fileurl="file://$PROJECT_DIR$/taotao-api-user/taotao-api-user.iml" filepath="$PROJECT_DIR$/taotao-api-user/taotao-api-user.iml" />
+      <module fileurl="file://$PROJECT_DIR$/taotao-service-goods/taotao-service-goods.iml" filepath="$PROJECT_DIR$/taotao-service-goods/taotao-service-goods.iml" />
+      <module fileurl="file://$PROJECT_DIR$/taotao-service-user/taotao-service-user.iml" filepath="$PROJECT_DIR$/taotao-service-user/taotao-service-user.iml" />
+      <module fileurl="file://$PROJECT_DIR$/taotao-web-manager/taotao-web-manager.iml" filepath="$PROJECT_DIR$/taotao-web-manager/taotao-web-manager.iml" />
+    </modules>
+  </component>
+</project>

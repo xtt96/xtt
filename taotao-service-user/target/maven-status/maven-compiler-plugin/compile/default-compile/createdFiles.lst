@@ -1,0 +1,7 @@
+com\usian\taotao\service\user\mapper\UserRoleMapper.class
+com\usian\taotao\service\user\mapper\PermissionMapper.class
+com\usian\taotao\service\user\mapper\RolePermissionMapper.class
+com\usian\taotao\service\user\mapper\UserMapper.class
+com\usian\taotao\service\user\mapper\RoleMapper.class
+com\usian\taotao\service\user\api\impl\UserServiceImpl.class
+com\usian\taotao\service\user\UserServiceProvider.class

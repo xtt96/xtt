@@ -1,0 +1,4 @@
+com\usian\taotao\web\interceptor\LoginInterceptor.class
+com\usian\taotao\web\controller\UserController.class
+com\usian\taotao\web\controller\ItemController.class
+com\usian\taotao\web\interceptor\PermissionInterceptor.class

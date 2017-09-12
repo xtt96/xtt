@@ -1,0 +1,7 @@
+com\usian\taotao\service\user\pojo\Role.class
+com\usian\taotao\service\user\api\UserService.class
+com\usian\taotao\service\user\pojo\User.class
+com\usian\taotao\service\user\vo\ActiveUser.class
+com\usian\taotao\service\user\pojo\Permission.class
+com\usian\taotao\service\user\pojo\RolePermission.class
+com\usian\taotao\service\user\pojo\UserRole.class
